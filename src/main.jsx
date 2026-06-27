@@ -287,7 +287,7 @@ function GuideTabs({ variant }) {
               </div>
             </div>
             <div className={`image-stage hidden min-h-[360px] overflow-hidden rounded-3xl border lg:block ${light ? "is-light" : "is-dark-guide border-trino-cyan/20"}`}>
-              <img src={activeArt} alt="" className="h-full w-full object-cover object-center" />
+              <img src={activeArt} alt="" className="h-full w-full object-contain object-center" />
             </div>
           </div>
         </div>
