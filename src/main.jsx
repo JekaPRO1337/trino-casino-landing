@@ -217,35 +217,35 @@ function GuideTabs({ variant }) {
       label: "Bonus",
       text: "Najważniejszy ekran prowadzi do bonusu, ale nie zakrywa grafiki. Oferta jest duża, czytelna i wygląda jak część kasyna, a nie tabelka afiliacyjna.",
       art: images.guideBonus,
-      darkArt: images.guideBonusDark,
+      darkArt: images.galleryFour,
       lightArt: images.guideBonus
     },
     {
       label: "Automaty",
       text: "Katalog slotów ma normalne miniatury gier, rating, RTP i osobny panel po kliknięciu. To daje prostotę listy i premium efekt dużego artu.",
       art: images.guideSlots,
-      darkArt: images.guideSlotsDark,
+      darkArt: images.galleryOne,
       lightArt: images.guideSlots
     },
     {
       label: "VIP",
       text: "Glass boxy opisują cashback, misje, turnieje i nagrody statusowe. Działają jako wizualne kotwice w długiej stronie SEO.",
       art: images.guideVip,
-      darkArt: images.guideVipDark,
+      darkArt: images.heroVip,
       lightArt: images.guideVip
     },
     {
       label: "Mobile",
       text: "Na telefonie sekcje idą w jedną kolumnę, przyciski nie uciekają, a CTA nie zasłania interaktywnych elementów.",
       art: images.guideMobile,
-      darkArt: images.guideMobileDark,
+      darkArt: images.galleryTwo,
       lightArt: images.guideMobile
     },
     {
       label: "Płatności",
       text: "Footer i sekcja trust pokazują BLIK, Visa, Mastercard, krypto, portfele i odpowiedzialną grę bez robienia pustego dołu strony.",
       art: images.guidePayments,
-      darkArt: images.guidePaymentsDark,
+      darkArt: images.galleryFive,
       lightArt: images.guidePayments
     }
   ];
