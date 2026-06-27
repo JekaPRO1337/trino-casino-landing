@@ -18,7 +18,7 @@ import { images } from "./assets";
 import { alienScenes, faq, highlights, navItems, reviews, slotCatalog, supportedSlotScenes, variants } from "./content";
 
 const fallbackVariant = "pl-01";
-const AFFILIATE_LINK = 'https://gamehub.g2afse.com/click?pid=4926&offer_id=1120';
+const AFFILIATE_LINK = 'https://www.figma.com/design/2EAYvzW7KAX413UqTPq5ox/SpellWin?node-id=0-1&p=f&t=YjDRagqBDGflPuds-0';
 
 function getVariantId() {
   if (window.TRINO_VARIANT && variants[window.TRINO_VARIANT]) return window.TRINO_VARIANT;
