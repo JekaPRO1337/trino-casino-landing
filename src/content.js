@@ -133,7 +133,7 @@ export const slotCatalog = [
 export const alienScenes = [
   {
     title: "VIP sala Trino",
-    label: "Alien + casino girls",
+    label: "Little Alien + casino girls",
     image: images.heroVip,
     lightImage: images.whiteHostesses,
     text:

@@ -321,7 +321,7 @@ function AlienGallery({ variant }) {
               className={`${light ? "frost-card" : "glass-card"} overflow-hidden ${index === 0 ? "xl:col-span-2" : ""}`}
             >
               <div className={`alien-media ${light ? "is-light" : ""} ${index === 0 ? "is-wide" : ""}`}>
-                <img src={sceneImage} alt={scene.title} className="h-full w-full object-cover object-center" />
+                <img src={sceneImage} alt={scene.title} className="h-full w-full object-cover object-top" />
               </div>
               <div className="p-5 md:p-6">
                 <span className={light ? "label-blue" : "label-cyan"}>{scene.label}</span>
@@ -393,7 +393,7 @@ function SlotCatalog({ variant }) {
           </div>
           <aside className={`sticky top-24 h-max rounded-[28px] p-5 ${light ? "frost-card" : "glass-card"}`}>
             <div className={`image-stage relative overflow-hidden rounded-2xl ${light ? "is-light" : ""}`}>
-              <img src={selectedArt} alt={selected.title} className="h-80 w-full object-cover object-center" />
+              <img src={selectedArt} alt={selected.title} className="h-80 w-full object-cover object-top" />
               <span className="absolute bottom-5 left-5 rounded-xl bg-slate-950/80 px-4 py-3 text-sm font-black uppercase text-white backdrop-blur">
                 {selected.category}
               </span>
@@ -451,7 +451,7 @@ function SupportedSlots({ variant }) {
               return (
                 <article key={scene.title} className={`${light ? "frost-card" : "glass-card"} overflow-hidden`}>
                   <div className={`supported-media ${light ? "is-light" : ""}`}>
-                    <img src={sceneImage} alt={scene.title} className="h-full w-full object-cover object-center" />
+                    <img src={sceneImage} alt={scene.title} className="h-full w-full object-cover object-top" />
                   </div>
                   <div className="p-5 md:p-6">
                     <h3 className={`text-3xl font-black ${light ? "text-slate-950" : "text-white"}`}>{scene.title}</h3>
