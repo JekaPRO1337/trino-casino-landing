@@ -106,9 +106,9 @@ function Hero({ variant }) {
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,6,20,.58)_0%,rgba(5,6,20,.28)_42%,rgba(5,6,20,.04)_72%,rgba(5,6,20,.18)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#08081b] to-transparent" />
-      <div className="hero-dark-content relative z-10 mx-auto grid w-[min(1440px,calc(100%-32px))] grid-cols-1 items-end gap-10 pb-20 pt-32 xl:grid-cols-[minmax(0,780px)_1fr]">
-        <div className="glass-panel max-w-[800px] p-7 md:p-9">
-          <h1 className="font-display text-[40px] leading-[.95] text-white md:text-[64px] xl:text-[76px]">
+      <div className="hero-dark-content relative z-10 mx-auto grid w-[min(1440px,calc(100%-32px))] grid-cols-1 items-end gap-10 pb-20 pt-32 xl:grid-cols-[minmax(0,500px)_1fr] 2xl:grid-cols-[minmax(0,600px)_1fr]">
+        <div className="glass-panel max-w-[500px] 2xl:max-w-[600px] p-7 md:p-9">
+          <h1 className="font-display text-[40px] leading-[.95] text-white md:text-[56px] 2xl:text-[64px]">
             {variant.title}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-100/90">{variant.subtitle}</p>
