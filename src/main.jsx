@@ -18,6 +18,7 @@ import { images } from "./assets";
 import { alienScenes, faq, highlights, navItems, reviews, slotCatalog, supportedSlotScenes, variants } from "./content";
 
 const fallbackVariant = "pl-01";
+const AFFILIATE_LINK = 'https://gamehub.g2afse.com/click?pid=4926&offer_id=1120';
 
 function getVariantId() {
   if (window.TRINO_VARIANT && variants[window.TRINO_VARIANT]) return window.TRINO_VARIANT;
@@ -46,7 +47,7 @@ function Header({ variant }) {
             </a>
           ))}
         </nav>
-        <a href="#bonus" className={`${light ? "btn-blue-solid" : "btn-yellow"} hidden min-w-36 lg:inline-flex`}>
+        <a href={AFFILIATE_LINK} className={`${light ? "btn-blue-solid" : "btn-yellow"} hidden min-w-36 lg:inline-flex`}>
           Zagraj teraz
         </a>
       </div>
@@ -78,7 +79,7 @@ function Hero({ variant }) {
                 <strong className="mt-2 block text-4xl font-black">{variant.spins}</strong>
               </div>
             </div>
-            <a href="#sloty" className="mt-7 inline-flex h-16 w-full items-center justify-center gap-3 rounded-xl bg-blue-600 text-xl font-black text-white shadow-xl shadow-blue-600/25 transition hover:bg-blue-700">
+            <a href={AFFILIATE_LINK} className="mt-7 inline-flex h-16 w-full items-center justify-center gap-3 rounded-xl bg-blue-600 text-xl font-black text-white shadow-xl shadow-blue-600/25 transition hover:bg-blue-700">
               Graj w Trino <ChevronRight className="h-6 w-6" />
             </a>
             <div className="mt-7 flex flex-wrap gap-6 text-sm font-black text-slate-700">
@@ -110,7 +111,7 @@ function Hero({ variant }) {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-100/90">{variant.subtitle}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#bonus" className="btn-yellow">
+            <a href={AFFILIATE_LINK} className="btn-yellow">
               Odbierz bonus
             </a>
             <a href="#sloty" className="btn-dark">
@@ -416,7 +417,7 @@ function SlotCatalog({ variant }) {
               ))}
               <strong className={`ml-2 ${light ? "text-slate-950" : "text-white"}`}>{selected.rating}</strong>
             </div>
-            <a href="#bonus" className="mt-6 flex h-16 items-center justify-center gap-3 rounded-xl bg-blue-600 text-xl font-black text-white shadow-lg shadow-blue-600/25">
+            <a href={AFFILIATE_LINK} className="mt-6 flex h-16 items-center justify-center gap-3 rounded-xl bg-blue-600 text-xl font-black text-white shadow-lg shadow-blue-600/25">
               Graj teraz <ChevronRight />
             </a>
           </aside>
