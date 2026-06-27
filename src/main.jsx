@@ -21,6 +21,8 @@ const fallbackVariant = "pl-01";
 const AFFILIATE_LINK = 'https://www.figma.com/design/2EAYvzW7KAX413UqTPq5ox/SpellWin?node-id=0-1&p=f&t=YjDRagqBDGflPuds-0';
 
 function getVariantId() {
+  const envVariant = import.meta.env.VITE_VARIANT;
+  if (envVariant && variants[envVariant]) return envVariant;
   if (window.TRINO_VARIANT && variants[window.TRINO_VARIANT]) return window.TRINO_VARIANT;
   const match = window.location.pathname.match(/pl-0[1-3]/);
   return match && variants[match[0]] ? match[0] : fallbackVariant;
