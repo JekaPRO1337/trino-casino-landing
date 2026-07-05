@@ -15,10 +15,10 @@ import {
 } from "lucide-react";
 import "./styles.css";
 import { images } from "./assets";
-import { alienScenes, faq, highlights, navItems, reviews, slotCatalog, supportedSlotScenes, variants } from "./content";
+import { alienScenes, depositSteps, faq, highlights, navItems, reviews, slotCatalog, supportedSlotScenes, variants } from "./content";
 
 const fallbackVariant = "pl-01";
-const AFFILIATE_LINK = 'https://www.figma.com/design/2EAYvzW7KAX413UqTPq5ox/SpellWin?node-id=0-1&p=f&t=YjDRagqBDGflPuds-0';
+const AFFILIATE_LINK = "https://trinocasino.com/";
 
 function getVariantId() {
   const envVariant = import.meta.env.VITE_VARIANT;
@@ -106,8 +106,8 @@ function Hero({ variant }) {
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,6,20,.58)_0%,rgba(5,6,20,.28)_42%,rgba(5,6,20,.04)_72%,rgba(5,6,20,.18)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#08081b] to-transparent" />
-      <div className="hero-dark-content relative z-10 mx-auto grid w-[min(1440px,calc(100%-32px))] grid-cols-1 items-end gap-10 pb-20 pt-32 xl:grid-cols-[minmax(0,500px)_1fr] 2xl:grid-cols-[minmax(0,600px)_1fr]">
-        <div className="glass-panel max-w-[500px] 2xl:max-w-[600px] p-7 md:p-9">
+      <div className="hero-dark-content relative z-10 ml-[clamp(16px,5vw,140px)] mr-4 grid w-[min(720px,calc(100%-32px))] grid-cols-1 items-end gap-10 pb-20 pt-32">
+        <div className="glass-panel max-w-[560px] p-7 md:p-9">
           <h1 className="font-display text-[40px] leading-[.95] text-white md:text-[56px] 2xl:text-[64px]">
             {variant.title}
           </h1>
@@ -150,13 +150,9 @@ function StatStrip({ variant }) {
 
 function BonusShowcase({ variant }) {
   const light = variant.isLight;
-  const lightFeatureImage = images.whiteSpacesuit;
-  const cards = [
-    ["Format", "misje, turnieje, cashback i free spiny"],
-    ["Nagrody", "bonusy pieniężne, status VIP i pakiety slotowe"],
-    ["Udział", "rejestracja, pakiet startowy i pierwszy depozyt"],
-    ["Ważne", "warunki, limity i obrót sprawdzaj przed grą"]
-  ];
+  const lightFeatureImage = images.whiteAlienPhone2026;
+  const cards = depositSteps;
+  const highlightIcons = [Trophy, Gift, ShieldCheck, Zap];
   return (
     <section id="bonus" className={`section-space ${light ? "bg-[#eef3fb] text-slate-950" : "bg-[#050612]"}`}>
       <div className="mx-auto w-[min(1180px,calc(100%-32px))]">
@@ -190,19 +186,22 @@ function BonusShowcase({ variant }) {
                   <h3 className="mt-2 text-2xl font-black text-slate-950">Szkło, sloty i kosmiczny Trino</h3>
                   <p className="mt-2 leading-7 text-slate-600">Obraz prowadzi sekcję, a nie siedzi jako mała dekoracja w rogu.</p>
                 </div>
-              </article>
+            </article>
             ) : null}
-            {highlights.map(([title, text], index) => (
+            {highlights.map(([title, text], index) => {
+              const Icon = highlightIcons[index] || Sparkles;
+              return (
               <article key={title} className={`${light ? "frost-card" : "glass-card"} flex gap-4 p-5`}>
                 <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl font-black ${light ? "bg-blue-600 text-white" : "bg-trino-yellow text-slate-950"}`}>
-                  {["★", "◆", "✦", "●"][index]}
+                  <Icon className="h-5 w-5" />
                 </span>
                 <div>
                   <h3 className={`text-xl font-black ${light ? "text-slate-950" : "text-white"}`}>{title}</h3>
                   <p className={`mt-2 leading-7 ${light ? "text-slate-600" : "text-slate-300"}`}>{text}</p>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
@@ -215,38 +214,38 @@ function GuideTabs({ variant }) {
   const panels = [
     {
       label: "Bonus",
-      text: "Najważniejszy ekran prowadzi do bonusu, ale nie zakrywa grafiki. Oferta jest duża, czytelna i wygląda jak część kasyna, a nie tabelka afiliacyjna.",
-      art: images.guideBonus,
-      darkArt: images.galleryFour,
-      lightArt: images.guideBonus
+      text: "Najważniejszy ekran prowadzi do aktualnego pakietu: 400% do 25 000 zł, 500 DS i cztery pierwsze depozyty. Oferta jest duża, czytelna i wygląda jak część kasyna.",
+      art: images.darkSlotBoard2026,
+      darkArt: images.darkSlotBoard2026,
+      lightArt: images.whiteSlotBoard2026
     },
     {
       label: "Automaty",
-      text: "Katalog slotów ma normalne miniatury gier, rating, RTP i osobny panel po kliknięciu. To daje prostotę listy i premium efekt dużego artu.",
-      art: images.guideSlots,
-      darkArt: images.galleryOne,
-      lightArt: images.guideSlots
+      text: "Katalog pokazuje gry z welcome packu: Luck Of Tiger, Le Viking, Ze Zeus, Big Bass Vegas, Sweet Bonanza i Le Bandit. Kliknięcie otwiera duży panel z artem.",
+      art: images.darkPhoneLobby2026,
+      darkArt: images.darkPhoneLobby2026,
+      lightArt: images.whiteAlienPhone2026
     },
     {
       label: "VIP",
       text: "Glass boxy opisują cashback, misje, turnieje i nagrody statusowe. Działają jako wizualne kotwice w długiej stronie SEO.",
-      art: images.guideVip,
+      art: images.heroVip,
       darkArt: images.heroVip,
-      lightArt: images.guideVip
+      lightArt: images.whiteHostesses
     },
     {
       label: "Mobile",
       text: "Na telefonie sekcje idą w jedną kolumnę, przyciski nie uciekają, a CTA nie zasłania interaktywnych elementów.",
-      art: images.guideMobile,
-      darkArt: images.galleryTwo,
-      lightArt: images.guideMobile
+      art: images.darkPhoneLobby2026,
+      darkArt: images.darkPhoneLobby2026,
+      lightArt: images.whitePhoneClean2026
     },
     {
       label: "Płatności",
       text: "Footer i sekcja trust pokazują BLIK, Visa, Mastercard, krypto, portfele i odpowiedzialną grę bez robienia pustego dołu strony.",
-      art: images.guidePayments,
-      darkArt: images.galleryFive,
-      lightArt: images.guidePayments
+      art: images.collabLeBandit,
+      darkArt: images.collabLeBandit,
+      lightArt: images.whiteSpacesuit
     }
   ];
   const [active, setActive] = useState(0);
@@ -279,7 +278,7 @@ function GuideTabs({ variant }) {
               <h3 className={`text-2xl font-black ${light ? "text-slate-950" : "text-white"}`}>{activePanel.label} Trino Casino</h3>
               <p className={`mt-4 text-lg leading-8 ${light ? "text-slate-600" : "text-slate-200"}`}>{activePanel.text}</p>
               <div className="mt-5 grid gap-2">
-                {["bonus powitalny", "free spiny", "cashback", "szybki start"].map((item) => (
+                {["4 depozyty", "500 DS", "min. 75 zł", "szybki start"].map((item) => (
                   <span key={item} className={light ? "guide-chip is-light" : "guide-chip"}>
                     {item}
                   </span>
@@ -287,7 +286,7 @@ function GuideTabs({ variant }) {
               </div>
             </div>
             <div className={`image-stage hidden min-h-[360px] overflow-hidden rounded-3xl border lg:block ${light ? "is-light" : "is-dark-guide border-trino-cyan/20"}`}>
-              <img src={activeArt} alt="" className="h-full w-full object-contain object-center" />
+              <img src={activeArt} alt="" className="h-full w-full object-cover object-center" />
             </div>
           </div>
         </div>
@@ -310,7 +309,7 @@ function AlienGallery({ variant }) {
             </h2>
           </div>
           <p className={`text-xl leading-9 ${light ? "text-slate-600" : "text-slate-300"}`}>
-            Te bloki są przygotowane pod duże grafiki maskotki. Pliki można później podmienić na wersje w skafandrze, a układ zostanie ten sam.
+            Te bloki są przygotowane pod duże grafiki Trino: maskotka, sloty, hostessy, telefon i kasynowe sceny. Każda wersja dostaje własny zestaw obrazów.
           </p>
         </div>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -342,7 +341,7 @@ function AlienGallery({ variant }) {
 
 function SlotCatalog({ variant }) {
   const light = variant.isLight;
-  const [selectedId, setSelectedId] = useState(slotCatalog[1].id);
+  const [selectedId, setSelectedId] = useState(slotCatalog[0].id);
   const selected = useMemo(() => slotCatalog.find((slot) => slot.id === selectedId) || slotCatalog[0], [selectedId]);
   const selectedArt = light && selected.artLight ? selected.artLight : selected.art;
 
@@ -378,7 +377,11 @@ function SlotCatalog({ variant }) {
               >
                 <span className="hidden text-xl font-black text-slate-400 lg:block">{String(index + 1).padStart(2, "0")}</span>
                 <span className="flex items-center gap-5">
-                  <img src={slot.thumb} alt={slot.title} className="h-20 w-36 rounded-xl bg-slate-950/5 object-cover shadow-lg" />
+                  <img
+                    src={slot.thumb}
+                    alt={slot.title}
+                    className={`h-20 w-36 min-w-36 max-w-none shrink-0 rounded-xl bg-slate-950/5 shadow-lg ${slot.thumbFit === "contain" ? "object-contain p-1" : "object-cover object-center"}`}
+                  />
                   <span className="text-left">
                     <strong className={`block text-2xl ${light ? "text-slate-950" : "text-white"}`}>{slot.title}</strong>
                     <em className={`mt-1 block not-italic ${light ? "text-slate-500" : "text-slate-400"}`}>{slot.provider}</em>
@@ -395,7 +398,11 @@ function SlotCatalog({ variant }) {
           </div>
           <aside className={`sticky top-24 h-max rounded-[28px] p-5 ${light ? "frost-card" : "glass-card"}`}>
             <div className={`image-stage relative overflow-hidden rounded-2xl ${light ? "is-light" : ""}`}>
-              <img src={selectedArt} alt={selected.title} className="h-80 w-full object-cover object-top" />
+              <img
+                src={selectedArt}
+                alt={selected.title}
+                className={`h-80 w-full ${selected.artFit === "contain" ? "object-contain p-4" : "object-cover"} object-top`}
+              />
               <span className="absolute bottom-5 left-5 rounded-xl bg-slate-950/80 px-4 py-3 text-sm font-black uppercase text-white backdrop-blur">
                 {selected.category}
               </span>
@@ -443,7 +450,7 @@ function SupportedSlots({ variant }) {
             </h2>
           </div>
           <p className={`text-xl leading-9 ${light ? "text-slate-600" : "text-slate-300"}`}>
-            Lista zostaje prosta, a pod nią idą pełne obrazy: Dog House, Sweet Bonanza, Book of Ra i Gates of Olympus bez ciasnego kadrowania.
+            Lista zostaje prosta, a pod nią idą pełne obrazy: Luck Of Tiger, Le Viking, Big Bass Vegas, Le Bandit, Sweet Bonanza i Gates of Olympus bez ciasnego kadrowania.
           </p>
         </div>
         <div className="grid gap-5 lg:grid-cols-2">
@@ -473,7 +480,7 @@ function PromoMosaic({ variant }) {
   const light = variant.isLight;
   const tiles = [
     [Gift, "Bonus room", "Bonus, free spiny i promka widoczne bez szukania."],
-    [Sparkles, "Visual hooks", "Book, candy, doghouse i Olympus jako osobne motywy."],
+    [Sparkles, "Visual hooks", "Tiger, Viking, Bandit, Zeus i Sweet jako osobne motywy."],
     [WalletCards, "Szybkie płatności", "BLIK, karty, portfele i krypto w pełnym footerze."],
     [BadgeHelp, "FAQ SEO", "Długie odpowiedzi dla gracza i indeksacji."]
   ];
@@ -538,9 +545,9 @@ function Reviews({ variant }) {
 function SeoContent({ variant }) {
   const light = variant.isLight;
   const blocks = [
-    ["Trino Casino bonus dla graczy z Polski", "Landing pokazuje graczowi realny benefit: wysoki procent bonusowy, darmowe spiny, cashback i przejście do slotów. Dane kampanii zostają poza widokiem użytkownika, bo strona ma sprzedawać emocję i prosty start."],
-    ["Dlaczego katalog slotów jest ważny?", "Zwykła siatka kart szybko wygląda tanio. Lista z miniaturami, RTP, typem gry i prawym panelem daje więcej informacji i wygląda jak redakcyjny ranking, a nie przypadkowa galeria."],
-    ["Jak działa premium glass design?", "Ciemne tło, cienkie obramowania, półprzezroczyste panele i punktowe światło tworzą efekt drogiego kasyna. Ważne jest, żeby glass box miał treść i funkcję, a nie był pustą dekoracją."],
+    ["Trino Casino bonus dla graczy z Polski", "Landing pokazuje aktualny benefit: 400% do 25 000 zł, 500 darmowych spinów, minimalny depozyt 75 zł i przejście do slotów. Dane kampanii zostają poza widokiem użytkownika."],
+    ["Sloty z welcome packa Trino", "W katalogu pojawiają się Luck Of Tiger, Le Viking, Ze Zeus, Big Bass Vegas Double Down Deluxe, Sweet Bonanza i Le Bandit. To odpowiada temu, co reklamodawca chce widzieć w komunikacji."],
+    ["Jak działa premium glass design?", "Ciemne tło, cienkie obramowania, półprzezroczyste panele i punktowe światło tworzą efekt drogiego kasyna. Glass box ma treść i funkcję, a nie jest pustą dekoracją."],
     ["Mobile i odpowiedzialna gra", "Na mobile użytkownik musi szybko zobaczyć CTA, bonus, sloty i FAQ. Footer zawiera 18+, pomoc graczom, płatności i informację, że strona jest materiałem promocyjnym."]
   ];
   return (
@@ -688,4 +695,7 @@ function App() {
   );
 }
 
-createRoot(document.getElementById("root")).render(<App />);
+const rootElement = document.getElementById("root");
+const root = window.__TRINO_ROOT || createRoot(rootElement);
+window.__TRINO_ROOT = root;
+root.render(<App />);
