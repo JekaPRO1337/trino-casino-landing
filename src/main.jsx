@@ -18,7 +18,7 @@ import { images } from "./assets";
 import { alienScenes, depositSteps, faq, highlights, navItems, reviews, slotCatalog, supportedSlotScenes, variants } from "./content";
 
 const fallbackVariant = "pl-01";
-const AFFILIATE_LINK = "https://trinocasino.com/";
+const AFFILIATE_LINK = "https://trackdep.com/click?o=3860&a=770&link_id=7387&sub_id1={sub1}&aff_click_id={clickID}";
 
 function getVariantId() {
   const envVariant = import.meta.env.VITE_VARIANT;
