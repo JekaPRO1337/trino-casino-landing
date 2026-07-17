@@ -49,6 +49,14 @@ import avatarKsenia from "../assets/avatars/ksenia.png";
 import avatarDenis from "../assets/avatars/denis.png";
 import avatarMarina from "../assets/avatars/marina.png";
 import avatarArtem from "../assets/avatars/artem.png";
+import avatarIeAoife from "../assets/avatars/ie-aoife.png";
+import avatarIeCian from "../assets/avatars/ie-cian.png";
+import avatarIeNiamh from "../assets/avatars/ie-niamh.png";
+import avatarIeLiam from "../assets/avatars/ie-liam.png";
+import avatarDeLena from "../assets/avatars/de-lena.png";
+import avatarDeJonas from "../assets/avatars/de-jonas.png";
+import avatarDeSophie from "../assets/avatars/de-sophie.png";
+import avatarDeFelix from "../assets/avatars/de-felix.png";
 
 export const images = {
   heroVip,
@@ -101,5 +109,13 @@ export const images = {
   avatarKsenia,
   avatarDenis,
   avatarMarina,
-  avatarArtem
+  avatarArtem,
+  avatarIeAoife,
+  avatarIeCian,
+  avatarIeNiamh,
+  avatarIeLiam,
+  avatarDeLena,
+  avatarDeJonas,
+  avatarDeSophie,
+  avatarDeFelix
 };
